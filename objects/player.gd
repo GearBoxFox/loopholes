@@ -4,12 +4,6 @@ extends CharacterBody3D
 @export var movement_speed = 5
 @export var jump_strength = 8
 
-@export_subgroup("Weapons")
-@export var weapons: Array[Weapon] = []
-
-var weapon: Weapon
-var weapon_index := 0
-
 var mouse_sensitivity = 700
 var gamepad_sensitivity := 0.075
 
@@ -36,8 +30,6 @@ signal health_updated
 
 @onready var camera = $Head/Camera
 @onready var raycast = $Head/Camera/RayCast
-@onready var muzzle = $Head/Camera/SubViewportContainer/SubViewport/CameraItem/Muzzle
-@onready var container = $Head/Camera/SubViewportContainer/SubViewport/CameraItem/Container
 @onready var sound_footsteps = $SoundFootsteps
 @onready var blaster_cooldown = $Cooldown
 
@@ -48,9 +40,6 @@ signal health_updated
 func _ready():
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	
-	weapon = weapons[weapon_index] # Weapon must never be nil
-	initiate_change_weapon(weapon_index)
 
 func _physics_process(delta):
 	
@@ -73,12 +62,12 @@ func _physics_process(delta):
 	
 	# Rotation
 	
-	camera.rotation.z = lerp_angle(camera.rotation.z, -input_mouse.x * 25 * delta, delta * 5)	
+	# This line makes the camera "spin" when looking left/right quickly
+	#camera.rotation.z = lerp_angle(camera.rotation.z, -input_mouse.x * 25 * delta, delta * 5)	
 	
+	# These two lines handle the actual rotation of the camera and the entire character
 	camera.rotation.x = lerp_angle(camera.rotation.x, rotation_target.x, delta * 25)
 	rotation.y = lerp_angle(rotation.y, rotation_target.y, delta * 25)
-	
-	container.position = lerp(container.position, container_offset - (applied_velocity / 500), delta * 30)
 	
 	# Movement sound
 	
@@ -157,10 +146,6 @@ func handle_controls(_delta):
 			jump_double = false
 			
 		if(jump_single): action_jump()
-		
-	# Weapon switching
-	
-	action_weapon_toggle()
 
 # Handle gravity
 
@@ -189,102 +174,6 @@ func action_shoot():
 	if Input.is_action_pressed("shoot"):
 	
 		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
-		
-		Audio.play(weapon.sound_shoot)
-		
-		container.position.z += 0.25 # Knockback of weapon visual
-		camera.rotation.x += 0.025 # Knockback of camera
-		
-		# Set muzzle flash position, play animation
-		
-		muzzle.play("default")
-		
-		muzzle.rotation_degrees.z = randf_range(-45, 45)
-		muzzle.scale = Vector3.ONE * randf_range(0.40, 0.75)
-		muzzle.position = container.position - weapon.muzzle_position
-		
-		blaster_cooldown.start(weapon.cooldown)
-		
-		# Shoot the weapon, amount based on shot count
-		
-		for n in weapon.shot_count:
-		
-			raycast.target_position.x = randf_range(-weapon.spread, weapon.spread)
-			raycast.target_position.y = randf_range(-weapon.spread, weapon.spread)
-			
-			raycast.force_raycast_update()
-			
-			if !raycast.is_colliding(): continue # Don't create impact when raycast didn't hit
-			
-			var collider = raycast.get_collider()
-			
-			# Hitting an enemy
-			
-			if collider.has_method("damage"):
-				collider.damage(weapon.damage)
-			
-			# Creating an impact animation
-			
-			var impact = preload("res://objects/impact.tscn")
-			var impact_instance = impact.instantiate()
-			
-			impact_instance.play("shot")
-			
-			get_tree().root.add_child(impact_instance)
-			
-			impact_instance.position = raycast.get_collision_point() + (raycast.get_collision_normal() / 10)
-			impact_instance.look_at(camera.global_transform.origin, Vector3.UP, true) 
-
-# Toggle between available weapons (listed in 'weapons')
-
-func action_weapon_toggle():
-	
-	if Input.is_action_just_pressed("weapon_toggle"):
-		
-		weapon_index = wrap(weapon_index + 1, 0, weapons.size())
-		initiate_change_weapon(weapon_index)
-		
-		Audio.play("sounds/weapon_change.ogg")
-
-# Initiates the weapon changing animation (tween)
-
-func initiate_change_weapon(index):
-	
-	weapon_index = index
-	
-	tween = get_tree().create_tween()
-	tween.set_ease(Tween.EASE_OUT_IN)
-	tween.tween_property(container, "position", container_offset - Vector3(0, 1, 0), 0.1)
-	tween.tween_callback(change_weapon) # Changes the model
-
-# Switches the weapon model (off-screen)
-
-func change_weapon():
-	
-	weapon = weapons[weapon_index]
-
-	# Step 1. Remove previous weapon model(s) from container
-	
-	for n in container.get_children():
-		container.remove_child(n)
-	
-	# Step 2. Place new weapon model in container
-	
-	var weapon_model = weapon.model.instantiate()
-	container.add_child(weapon_model)
-	
-	weapon_model.position = weapon.position
-	weapon_model.rotation_degrees = weapon.rotation
-	
-	# Step 3. Set model to only render on layer 2 (the weapon camera)
-	
-	for child in weapon_model.find_children("*", "MeshInstance3D"):
-		child.layers = 2
-		
-	# Set weapon data
-	
-	raycast.target_position = Vector3(0, 0, -1) * weapon.max_distance
-	crosshair.texture = weapon.crosshair
 
 func damage(amount):
 	
