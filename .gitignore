@@ -13,3 +13,8 @@ export_presets.cfg
 .mono/
 data_*/
 mono_crash.*.json
+
+# Kenney ignores
+build/
+# https://github.com/godotengine/godot/issues/82270
+*~*.TMP
