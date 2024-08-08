@@ -1,17 +1,8 @@
-<p align="center"><img src="icon.png"/></p>
+### Assets Used
+Kenney FPS Starter Kit
+Kenney Prototype Textures
+Low Poly Medivial Weapons by LowPolyAssets
 
-# Starter Kit FPS
-
-This package includes a basic template for a first person shooter in Godot 4.1.1.stable.official. Includes features like;
-
-- Character controller
-- Weapons, switching weapons
-- Enemies
-- Sprites and 3D Models _(CC0 licensed)_
-
-### Screenshot
-
-<p align="center"><img src="screenshots/screenshot.png"/></p>
 
 ### Controls
 
@@ -26,7 +17,7 @@ This package includes a basic template for a first person shooter in Godot 4.1.1
 
 MIT License
 
-Copyright (c) 2023 Kenney
+Copyright (c) 2024 RowanFoxx
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

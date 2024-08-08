@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkxt6h44nj8pg"]
+
+[ext_resource type="ArrayMesh" uid="uid://b68jce10ito6r" path="res://models/LowPolyMedivalWeapons/meshes/bow.res" id="1_vn54g"]
+
+[node name="Bow" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, -8.74228e-07, -20, 0, 20, -8.74228e-07, 0, 0, 0)
+mesh = ExtResource("1_vn54g")

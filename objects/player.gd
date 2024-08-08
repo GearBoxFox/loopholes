@@ -78,7 +78,7 @@ func _physics_process(delta):
 	camera.rotation.x = lerp_angle(camera.rotation.x, rotation_target.x, delta * 25)
 	rotation.y = lerp_angle(rotation.y, rotation_target.y, delta * 25)
 	
-	container.position = lerp(container.position, container_offset - (applied_velocity / 30), delta * 10)
+	container.position = lerp(container.position, container_offset - (applied_velocity / 500), delta * 30)
 	
 	# Movement sound
 	
@@ -194,7 +194,6 @@ func action_shoot():
 		
 		container.position.z += 0.25 # Knockback of weapon visual
 		camera.rotation.x += 0.025 # Knockback of camera
-		movement_velocity += Vector3(0, 0, weapon.knockback) # Knockback
 		
 		# Set muzzle flash position, play animation
 		
