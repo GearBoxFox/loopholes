@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkxt6h44nj8pg"]
+[gd_scene load_steps=3 format=3 uid="uid://bkxt6h44nj8pg"]
 
 [ext_resource type="ArrayMesh" uid="uid://b68jce10ito6r" path="res://models/LowPolyMedivalWeapons/meshes/bow.res" id="1_vn54g"]
+[ext_resource type="ArrayMesh" uid="uid://c0g2efy8np0sp" path="res://models/LowPolyMedivalWeapons/meshes/arrow.res" id="2_kba2o"]
 
 [node name="Bow" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(20, 0, 0, 0, -8.74228e-07, -20, 0, 20, -8.74228e-07, 0, 0, 0)
+[node name="BowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(40, 0, 0, 0, -1.74846e-06, -40, 0, 40, -1.74846e-06, 0, 0, 0)
 mesh = ExtResource("1_vn54g")
+
+[node name="ArrowMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(39.7749, 0, 4.23807, 0, 40, 0, -4.23807, 0, 39.7749, 0.00864346, 0, 0.0148425)
+mesh = ExtResource("2_kba2o")

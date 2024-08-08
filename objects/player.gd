@@ -22,16 +22,16 @@ var previously_floored := false
 var jump_single := true
 var jump_double := true
 
-var container_offset = Vector3(1.2, -1.1, -2.75)
-
-var tween:Tween
+var arrow_scene := preload("res://weapons/arrow.tscn")
 
 signal health_updated
+signal spawn_projectile
 
 @onready var camera = $Head/Camera
 @onready var raycast = $Head/Camera/RayCast
 @onready var sound_footsteps = $SoundFootsteps
 @onready var blaster_cooldown = $Cooldown
+@onready var arrow_spawn = $Head/Camera/ArrowSpawn
 
 @export var crosshair:TextureRect
 
@@ -54,7 +54,7 @@ func _physics_process(delta):
 	
 	movement_velocity = transform.basis * movement_velocity # Move forward
 	
-	applied_velocity = velocity.lerp(movement_velocity, delta * 10)
+	applied_velocity = velocity.lerp(movement_velocity, delta * 20)
 	applied_velocity.y = -gravity
 	
 	velocity = applied_velocity
@@ -173,7 +173,10 @@ func action_shoot():
 	
 	if Input.is_action_pressed("shoot"):
 	
-		if !blaster_cooldown.is_stopped(): return # Cooldown for shooting
+		if blaster_cooldown.is_stopped(): # Cooldown for shooting
+			spawn_projectile.emit(arrow_spawn)
+			blaster_cooldown.start()
+		
 
 func damage(amount):
 	
