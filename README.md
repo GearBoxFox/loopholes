@@ -1,7 +1,7 @@
 ### Assets Used
-Kenney FPS Starter Kit
-Kenney Prototype Textures
-Low Poly Medivial Weapons by LowPolyAssets
+Kenney FPS Starter Kit \
+Kenney Prototype Textures \
+Low Poly Medivial Weapons by LowPolyAssets 
 
 
 ### Controls
