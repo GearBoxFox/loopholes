@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-var movement_speed: float = 100.0
-var movement_target_position: Vector3 = Vector3(0.0,0.0,0.0)
+var movement_speed: float = 5.0
+var movement_target_position: Vector3 = Vector3(0.0,6.0,0.0)
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 

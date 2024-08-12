@@ -36,6 +36,8 @@ albedo_texture = ExtResource("7_t7lg1")
 albedo_texture = ExtResource("8_ygrg7")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_aix0j"]
+vertices = PackedVector3Array(-21.6151, 0.5, -174.472, -21.6151, 0.5, 174.528, 21.6349, 0.5, 174.528, 21.6349, 0.5, -174.472)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_45oi1"]
 
@@ -46,7 +48,7 @@ script = ExtResource("1_3cwbx")
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 31.2686, -62)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 57.2686, -2)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 3, 0)
@@ -203,15 +205,15 @@ size = Vector3(3, 15, 2)
 [node name="Decoration" type="Node" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
-transform = Transform3D(13.2153, 0, 0, 0, 1, 0, 0, 0, 1.76849, 0, 0.5, 0)
-visible = false
+transform = Transform3D(13.2153, 0, 0, 0, 1, 0, 0, 0, 1.76849, 0, 0, 0)
 navigation_mesh = SubResource("NavigationMesh_aix0j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
-transform = Transform3D(18.4292, 0, 0, 0, 10, 0, 0, 0, 134.594, 0, 2, 0)
+transform = Transform3D(22.1151, 0, 0, 0, 10, 0, 0, 0, 174.972, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_45oi1")
 
 [node name="Soldier" parent="." instance=ExtResource("10_8pmyu")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 6, -146)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 6, -250)
 
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]

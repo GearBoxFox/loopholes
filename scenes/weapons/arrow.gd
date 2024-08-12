@@ -6,6 +6,7 @@ var y_velocity = 0
 
 var has_collided: bool = false
 var velocity: Vector3 = Vector3.ZERO
+var user_gravity = 10
 
 var prev_pose: Vector2 = Vector2.ZERO
 
@@ -27,7 +28,7 @@ func _physics_process(delta: float) -> void:
 		position.z += velocity.z * delta
 		position.y += velocity.y * delta
 	
-		velocity.y -= gravity * delta * 4
+		velocity.y -= user_gravity * delta * 4
 		
 		# Calculate angle based on pose delta
 		rotation.x = -asin(velocity.y / speed)
@@ -41,3 +42,5 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if !body.is_in_group("enemy") and !body.is_in_group("player"):
 		has_collided = true
+	elif !has_collided:
+		body.queue_free()
