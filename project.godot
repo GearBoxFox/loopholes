@@ -36,10 +36,6 @@ project/assembly_name="Starter Kit FPS"
 movie_writer/mjpeg_quality=1.0
 movie_writer/movie_file="D:/Godot/test.avi"
 
-[filesystem]
-
-import/blender/enabled=false
-
 [input]
 
 move_right={
