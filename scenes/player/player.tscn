@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl2ed4gkybggf"]
 
-[ext_resource type="Script" path="res://objects/player.gd" id="1_ffboj"]
-[ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://sprites/blob_shadow.png" id="2_b0fo8"]
-[ext_resource type="PackedScene" uid="uid://bkxt6h44nj8pg" path="res://weapons/bow.tscn" id="2_whs7g"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ffboj"]
+[ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://models/sprites/blob_shadow.png" id="2_b0fo8"]
+[ext_resource type="PackedScene" uid="uid://bkxt6h44nj8pg" path="res://scenes/weapons/bow.tscn" id="2_whs7g"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
@@ -16,7 +16,6 @@ movement_speed = 3
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
-visible = false
 shape = SubResource("CapsuleShape3D_gdq8c")
 
 [node name="Head" type="Node3D" parent="."]
@@ -33,7 +32,7 @@ target_position = Vector3(0, 0, -10)
 collide_with_areas = true
 
 [node name="Bow" parent="Head/Camera" instance=ExtResource("2_whs7g")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.13, -0.05, -0.159)
+transform = Transform3D(-7, 0, -6.11959e-07, 0, 7, 0, 6.11959e-07, 0, -7, 1.13331, -0.219718, -1)
 
 [node name="ArrowSpawn" type="Marker3D" parent="Head/Camera"]
 transform = Transform3D(-7, 0, -6.11959e-07, 0, 7, 0, 6.11959e-07, 0, -7, 0, -0.0342016, -0.89604)

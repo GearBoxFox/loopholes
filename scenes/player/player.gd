@@ -22,8 +22,6 @@ var previously_floored := false
 var jump_single := true
 var jump_double := true
 
-var arrow_scene := preload("res://weapons/arrow.tscn")
-
 signal health_updated
 signal spawn_projectile
 
