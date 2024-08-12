@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://bdn1b8s28eq78"]
+[gd_scene load_steps=4 format=3 uid="uid://bdn1b8s28eq78"]
+
+[ext_resource type="Script" path="res://scenes/enemies/soldier.gd" id="1_tw6bj"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_7n2dg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1xjga"]
 
 [node name="Soldier" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("1_tw6bj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_7n2dg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_1xjga")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

@@ -16,11 +16,13 @@ var input_mouse: Vector2
 
 var health:int = 100
 var gravity := 0.0
+var draw_timer := 0.0
 
 var previously_floored := false
 
 var jump_single := true
 var jump_double := true
+var drawing := false
 
 signal health_updated
 signal spawn_projectile
@@ -30,6 +32,7 @@ signal spawn_projectile
 @onready var sound_footsteps = $SoundFootsteps
 @onready var blaster_cooldown = $Cooldown
 @onready var arrow_spawn = $Head/Camera/ArrowSpawn
+@onready var bow_animation_player = $Head/Camera/Bow/AnimationPlayer
 
 @export var crosshair:TextureRect
 
@@ -128,6 +131,10 @@ func handle_controls(_delta):
 	rotation_target.x = clamp(rotation_target.x, deg_to_rad(-90), deg_to_rad(90))
 	
 	# Shooting
+	if drawing:
+		draw_timer += _delta
+	else:
+		draw_timer = 0
 	
 	action_shoot()
 	
@@ -168,12 +175,18 @@ func action_jump():
 # Shooting
 
 func action_shoot():
+	if !blaster_cooldown.is_stopped(): return
 	
 	if Input.is_action_pressed("shoot"):
-	
-		if blaster_cooldown.is_stopped(): # Cooldown for shooting
-			spawn_projectile.emit(arrow_spawn)
+		if !bow_animation_player.is_playing() && !drawing:
+			drawing = true
+			bow_animation_player.play("draw_back")
+	else:
+		if drawing:
+			bow_animation_player.play("release")
 			blaster_cooldown.start()
+			drawing = false
+			spawn_projectile.emit(arrow_spawn)
 		
 
 func damage(amount):
@@ -183,3 +196,7 @@ func damage(amount):
 	
 	if health < 0:
 		get_tree().reload_current_scene() # Reset when out of health
+
+
+func _on_cooldown_timeout() -> void:
+	bow_animation_player.play("RESET")

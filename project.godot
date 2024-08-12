@@ -111,6 +111,14 @@ weapon_toggle={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_navigation/layer_1="enemies"
+3d_physics/layer_2="World"
+3d_physics/layer_3="Enemies"
+3d_physics/layer_4="Arrows"
+
 [rendering]
 
 anti_aliasing/quality/screen_space_aa=1

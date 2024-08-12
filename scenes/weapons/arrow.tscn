@@ -10,10 +10,12 @@ height = 0.28408
 [node name="Arrow" type="Area3D"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 disable_mode = 1
+collision_layer = 8
+collision_mask = 6
 collision_priority = 2.0
 script = ExtResource("1_86t52")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="ArrowMesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0)
 mesh = ExtResource("1_fd0ku")
 
