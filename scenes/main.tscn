@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=20 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b1idyu1chcfor" path="res://models/Textures/PNG/Dark/texture_01.png" id="6_vo7d2"]
 [ext_resource type="Texture2D" uid="uid://dlsdhtdy04r1o" path="res://models/Textures/PNG/Purple/texture_01.png" id="7_t7lg1"]
 [ext_resource type="Texture2D" uid="uid://bndchvrbo384d" path="res://models/Textures/PNG/Purple/texture_04.png" id="8_ygrg7"]
+[ext_resource type="PackedScene" uid="uid://bdn1b8s28eq78" path="res://scenes/enemies/soldier.tscn" id="10_8pmyu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
 font = ExtResource("3_w27de")
@@ -34,6 +35,10 @@ albedo_texture = ExtResource("7_t7lg1")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dguql"]
 albedo_texture = ExtResource("8_ygrg7")
 
+[sub_resource type="NavigationMesh" id="NavigationMesh_aix0j"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_45oi1"]
+
 [node name="Main" type="Node3D"]
 script = ExtResource("1_3cwbx")
 
@@ -41,7 +46,7 @@ script = ExtResource("1_3cwbx")
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 56.2686, 0)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 31.2686, -62)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 3, 0)
@@ -196,5 +201,17 @@ operation = 2
 size = Vector3(3, 15, 2)
 
 [node name="Decoration" type="Node" parent="."]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+transform = Transform3D(13.2153, 0, 0, 0, 1, 0, 0, 0, 1.76849, 0, 0.5, 0)
+visible = false
+navigation_mesh = SubResource("NavigationMesh_aix0j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
+transform = Transform3D(18.4292, 0, 0, 0, 10, 0, 0, 0, 134.594, 0, 2, 0)
+mesh = SubResource("PlaneMesh_45oi1")
+
+[node name="Soldier" parent="." instance=ExtResource("10_8pmyu")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 6, -146)
 
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]
