@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce3lgq7foiusl"
-path="res://.godot/imported/crosshair-repeater.png-ec408225e689b23875963003728cb016.ctex"
+path="res://.godot/imported/crosshair-repeater.png-0d21bd95c5f6a5fff728e7494f6a583f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/crosshair-repeater.png"
-dest_files=["res://.godot/imported/crosshair-repeater.png-ec408225e689b23875963003728cb016.ctex"]
+source_file="res://models/sprites/crosshair-repeater.png"
+dest_files=["res://.godot/imported/crosshair-repeater.png-0d21bd95c5f6a5fff728e7494f6a583f.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ggihh27mlrr"
-path="res://.godot/imported/blob_shadow.png-d19f4ffceb1d99dd3331acec2dc6d7df.ctex"
+uid="uid://hmyt6gj62on0"
+path="res://.godot/imported/Armor_Tex.png-20fb3d45917b6fb2c7ed87f2ccf347eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/blob_shadow.png"
-dest_files=["res://.godot/imported/blob_shadow.png-d19f4ffceb1d99dd3331acec2dc6d7df.ctex"]
+source_file="res://models/Soldier/Armor_Tex.png"
+dest_files=["res://.godot/imported/Armor_Tex.png-20fb3d45917b6fb2c7ed87f2ccf347eb.ctex"]
 
 [params]
 

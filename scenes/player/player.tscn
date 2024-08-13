@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl2ed4gkybggf"]
 
-[ext_resource type="Script" path="res://objects/player.gd" id="1_ffboj"]
-[ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://sprites/blob_shadow.png" id="2_b0fo8"]
-[ext_resource type="PackedScene" uid="uid://bkxt6h44nj8pg" path="res://weapons/bow.tscn" id="2_whs7g"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ffboj"]
+[ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://models/sprites/blob_shadow.png" id="2_b0fo8"]
+[ext_resource type="PackedScene" uid="uid://bkxt6h44nj8pg" path="res://scenes/weapons/bow.tscn" id="2_whs7g"]
 [ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
@@ -11,12 +11,12 @@ height = 1.0
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 0, 0.5, 0)
+collision_mask = 2
 script = ExtResource("1_ffboj")
 movement_speed = 3
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
-visible = false
 shape = SubResource("CapsuleShape3D_gdq8c")
 
 [node name="Head" type="Node3D" parent="."]
@@ -33,10 +33,25 @@ target_position = Vector3(0, 0, -10)
 collide_with_areas = true
 
 [node name="Bow" parent="Head/Camera" instance=ExtResource("2_whs7g")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.13, -0.05, -0.159)
+transform = Transform3D(-7, 0, -6.11959e-07, 0, 7, 0, 6.11959e-07, 0, -7, 1.13331, -0.219718, -1)
 
 [node name="ArrowSpawn" type="Marker3D" parent="Head/Camera"]
-transform = Transform3D(-7, 0, -6.11959e-07, 0, 7, 0, 6.11959e-07, 0, -7, 0, -0.0342016, -0.89604)
+transform = Transform3D(-7, 0, -6.11959e-07, 0, 7, 0, 6.11959e-07, 0, -7, 0, 0, -0.955682)
+
+[node name="UI" type="CanvasLayer" parent="Head/Camera"]
+
+[node name="ColorRect" type="ColorRect" parent="Head/Camera/UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Shadow" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
@@ -53,3 +68,5 @@ autoplay = true
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
+
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]

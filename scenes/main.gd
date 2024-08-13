@@ -1,6 +1,6 @@
 extends Node3D
 
-var arrow_base = preload("res://weapons/arrow.tscn")
+var arrow_base = preload("res://scenes/weapons/arrow.tscn")
 
 func _on_player_spawn_projectile(location: Marker3D) -> void:
 	var arrow = arrow_base.instantiate()
