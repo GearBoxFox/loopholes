@@ -1,5 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://bdn1b8s28eq78"]
+[gd_scene load_steps=4 format=3 uid="uid://b4kwwlc1gw5eg"]
 
-[ext_resource type="PackedScene" uid="uid://h7imqy88eg21" path="res://models/EnemyModel/soldier.glb" id="1_jw32g"]
+[ext_resource type="PackedScene" uid="uid://cw4b2re5p5ki3" path="res://scenes/enemies/soldierModel.tscn" id="2_107a3"]
+[ext_resource type="Script" path="res://scenes/enemies/soldier.gd" id="2_br3ou"]
 
-[node name="soldier" instance=ExtResource("1_jw32g")]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_grl2j"]
+radius = 0.349691
+height = 1.93035
+
+[node name="Soldier" type="CharacterBody3D"]
+collision_layer = 4
+collision_mask = 10
+script = ExtResource("2_br3ou")
+
+[node name="soldier" parent="." instance=ExtResource("2_107a3")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971698, 0)
+shape = SubResource("CapsuleShape3D_grl2j")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true

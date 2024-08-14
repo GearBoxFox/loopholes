@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b1idyu1chcfor" path="res://models/Textures/PNG/Dark/texture_01.png" id="6_vo7d2"]
 [ext_resource type="Texture2D" uid="uid://dlsdhtdy04r1o" path="res://models/Textures/PNG/Purple/texture_01.png" id="7_t7lg1"]
 [ext_resource type="Texture2D" uid="uid://bndchvrbo384d" path="res://models/Textures/PNG/Purple/texture_04.png" id="8_ygrg7"]
-[ext_resource type="PackedScene" uid="uid://bdn1b8s28eq78" path="res://scenes/enemies/soldier.tscn" id="10_8pmyu"]
+[ext_resource type="PackedScene" uid="uid://b4kwwlc1gw5eg" path="res://scenes/enemies/soldier.tscn" id="10_8pmyu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
 font = ExtResource("3_w27de")
@@ -48,7 +48,7 @@ script = ExtResource("1_3cwbx")
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 20.6963, -2)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 20.6963, -168.255)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 3, 0)
@@ -214,6 +214,6 @@ visible = false
 mesh = SubResource("PlaneMesh_45oi1")
 
 [node name="Soldier" parent="." instance=ExtResource("10_8pmyu")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 6, -250)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 48.2797, -227.013)
 
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]
