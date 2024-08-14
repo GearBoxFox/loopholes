@@ -1,7 +1,7 @@
 ### Assets/Tutorials Used
-Kenney FPS Starter Kit \
-Kenney Prototype Textures \
-Low Poly Medivial Weapons by LowPolyAssets \
+[Kenney FPS Starter Kit](https://github.com/KenneyNL/Starter-Kit-FPS) \
+[Kenney Prototype Textures](https://kenney.nl/assets/prototype-textures) \
+[Low Poly Medivial Weapons by LowPolyAssets](https://lowpolyassets.itch.io/low-poly-medieval-weapons) \
 [Godot 4/ Blender - Third Person Character From Scratch](https://www.youtube.com/watch?v=VasHZZyPpYU&t=1613s)
 
 
