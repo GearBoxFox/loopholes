@@ -186,7 +186,7 @@ func action_shoot():
 			bow_animation_player.play("release")
 			blaster_cooldown.start()
 			drawing = false
-			spawn_projectile.emit(arrow_spawn)
+			spawn_projectile.emit(arrow_spawn, draw_timer / 1.0)
 		
 
 func damage(amount):

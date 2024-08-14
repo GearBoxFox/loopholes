@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var speed = 100
+@export var speed = 200
 
 var y_velocity = 0
 
@@ -13,10 +13,10 @@ var prev_pose: Vector2 = Vector2.ZERO
 @onready var player = get_parent().get_node("Player")
 @onready var arrow_mesh = $ArrowMesh
 
-func init() -> void:
-	velocity.y = -sin(rotation.x) * speed
-	velocity.x = sin(rotation.y) * cos(rotation.x) * speed
-	velocity.z = cos(rotation.y) * cos(rotation.x) * speed
+func init(draw_percentage: float) -> void:
+	velocity.y = -sin(rotation.x) * speed * draw_percentage
+	velocity.x = sin(rotation.y) * cos(rotation.x) * speed * draw_percentage
+	velocity.z = cos(rotation.y) * cos(rotation.x) * speed * draw_percentage
 	
 	prev_pose = Vector2(global_position.x, global_position.y)
 
