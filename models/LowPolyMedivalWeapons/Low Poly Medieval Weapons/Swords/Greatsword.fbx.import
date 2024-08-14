@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c2hhoo0mic8dk"
-valid=false
+path="res://.godot/imported/Greatsword.fbx-6ef5b07f8343403b4414c1031bb196ab.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Swords/Greatsword.fbx"
+dest_files=["res://.godot/imported/Greatsword.fbx-6ef5b07f8343403b4414c1031bb196ab.scn"]
 
 [params]
 

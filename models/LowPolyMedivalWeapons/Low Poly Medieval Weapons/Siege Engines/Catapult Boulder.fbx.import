@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dvocmvvwkwa4w"
-valid=false
+path="res://.godot/imported/Catapult Boulder.fbx-c8ea736d3e573c656996fe6e543b35ec.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Siege Engines/Catapult Boulder.fbx"
+dest_files=["res://.godot/imported/Catapult Boulder.fbx-c8ea736d3e573c656996fe6e543b35ec.scn"]
 
 [params]
 

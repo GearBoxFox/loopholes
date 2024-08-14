@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bn0m3jg666n7c"
-valid=false
+path="res://.godot/imported/Two handed Axe.fbx-c5790965e258d274189c2a5c1cac6d20.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Axes/Two handed Axe.fbx"
+dest_files=["res://.godot/imported/Two handed Axe.fbx-c5790965e258d274189c2a5c1cac6d20.scn"]
 
 [params]
 

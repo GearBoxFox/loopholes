@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bm1pj2jwy7tlw"
-valid=false
+path="res://.godot/imported/Crossbow.fbx-69bcc6dec3338f5cd46c59912f94ace6.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Bows/Crossbow.fbx"
+dest_files=["res://.godot/imported/Crossbow.fbx-69bcc6dec3338f5cd46c59912f94ace6.scn"]
 
 [params]
 

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://brmklou0acfia"
-valid=false
+path="res://.godot/imported/Battle Axe.fbx-2cc2a8b8b7b1d2542eccc38c28d8a0f7.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Axes/Battle Axe.fbx"
+dest_files=["res://.godot/imported/Battle Axe.fbx-2cc2a8b8b7b1d2542eccc38c28d8a0f7.scn"]
 
 [params]
 

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dath32osl4g12"
-valid=false
+path="res://.godot/imported/Hammer.fbx-4b77773eabb803c6e217b83e860638b9.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Hammers/Hammer.fbx"
+dest_files=["res://.godot/imported/Hammer.fbx-4b77773eabb803c6e217b83e860638b9.scn"]
 
 [params]
 

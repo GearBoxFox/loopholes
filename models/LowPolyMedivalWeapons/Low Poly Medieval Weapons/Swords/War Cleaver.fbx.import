@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bw3kg3qw5nuvg"
-valid=false
+path="res://.godot/imported/War Cleaver.fbx-816a1c9cb6276316eafc20ed64e0275e.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Swords/War Cleaver.fbx"
+dest_files=["res://.godot/imported/War Cleaver.fbx-816a1c9cb6276316eafc20ed64e0275e.scn"]
 
 [params]
 

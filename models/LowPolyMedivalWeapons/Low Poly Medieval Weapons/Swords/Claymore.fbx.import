@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c0o0dtpvftp1n"
-valid=false
+path="res://.godot/imported/Claymore.fbx-63317260678bab04d8104c24f257804a.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Swords/Claymore.fbx"
+dest_files=["res://.godot/imported/Claymore.fbx-63317260678bab04d8104c24f257804a.scn"]
 
 [params]
 

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d01nlkebmw1db"
-valid=false
+path="res://.godot/imported/Polearm.fbx-777fb6fef60f3e73005c74629d98dacd.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Spears/Polearm.fbx"
+dest_files=["res://.godot/imported/Polearm.fbx-777fb6fef60f3e73005c74629d98dacd.scn"]
 
 [params]
 

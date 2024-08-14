@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://breidc1dy8lgy"
-valid=false
+path="res://.godot/imported/Messer.fbx-1e1e659c1ca42a336183c60a20c179fd.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Swords/Messer.fbx"
+dest_files=["res://.godot/imported/Messer.fbx-1e1e659c1ca42a336183c60a20c179fd.scn"]
 
 [params]
 

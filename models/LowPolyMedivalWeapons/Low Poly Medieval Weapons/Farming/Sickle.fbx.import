@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ds5y52a2b7tt6"
-valid=false
+path="res://.godot/imported/Sickle.fbx-0f5274af22cf09992b58750f46a71672.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Farming/Sickle.fbx"
+dest_files=["res://.godot/imported/Sickle.fbx-0f5274af22cf09992b58750f46a71672.scn"]
 
 [params]
 

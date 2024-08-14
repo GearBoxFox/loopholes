@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://fgs1h7q16r5u"
-valid=false
+path="res://.godot/imported/Arrow.fbx-ad88385433449a72ebd0d3009e5c2709.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Bows/Arrow.fbx"
+dest_files=["res://.godot/imported/Arrow.fbx-ad88385433449a72ebd0d3009e5c2709.scn"]
 
 [params]
 

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bsrks63ejb3jh"
-valid=false
+path="res://.godot/imported/Recurve Bow.fbx-1ea3518449cdd13f64b67a0f682ea004.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Bows/Recurve Bow.fbx"
+dest_files=["res://.godot/imported/Recurve Bow.fbx-1ea3518449cdd13f64b67a0f682ea004.scn"]
 
 [params]
 

@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://gcj0nx774pfg"
-valid=false
+path="res://.godot/imported/Seige Tower.fbx-4f7266598c980cdcbbfdeecbdeb7cb5a.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Siege Engines/Seige Tower.fbx"
+dest_files=["res://.godot/imported/Seige Tower.fbx-4f7266598c980cdcbbfdeecbdeb7cb5a.scn"]
 
 [params]
 

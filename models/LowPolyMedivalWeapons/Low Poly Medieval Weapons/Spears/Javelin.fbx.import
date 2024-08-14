@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ck5t7prgyynd8"
-valid=false
+path="res://.godot/imported/Javelin.fbx-4559ec54202f5c2bc7eb2bb4da29c307.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Spears/Javelin.fbx"
+dest_files=["res://.godot/imported/Javelin.fbx-4559ec54202f5c2bc7eb2bb4da29c307.scn"]
 
 [params]
 

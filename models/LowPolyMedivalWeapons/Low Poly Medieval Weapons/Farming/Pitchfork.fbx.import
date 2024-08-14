@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://e1vk4vb2uhb"
-valid=false
+path="res://.godot/imported/Pitchfork.fbx-74d81d3fc6f8c8196f8e9aaad32722df.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Farming/Pitchfork.fbx"
+dest_files=["res://.godot/imported/Pitchfork.fbx-74d81d3fc6f8c8196f8e9aaad32722df.scn"]
 
 [params]
 

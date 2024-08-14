@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://brcab5ob17xjq"
-valid=false
+path="res://.godot/imported/Two-Handed Sword.fbx-d9c57d2ee7a89dfdaeb67d14bdbcf604.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Swords/Two-Handed Sword.fbx"
+dest_files=["res://.godot/imported/Two-Handed Sword.fbx-d9c57d2ee7a89dfdaeb67d14bdbcf604.scn"]
 
 [params]
 

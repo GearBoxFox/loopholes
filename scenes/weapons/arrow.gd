@@ -34,9 +34,9 @@ func _physics_process(delta: float) -> void:
 		rotation.x = -asin(velocity.y / speed)
 		
 	# scale according to distance from player
-	var distance = (global_position - player.global_position).length()
-	var scaler = 2 * pow(log(distance), 3)
-	arrow_mesh.scale = Vector3.ONE * scaler
+	#var distance = (global_position - player.global_position).length()
+	#var scaler = 2 * pow(log(distance), 3)
+	#arrow_mesh.scale = Vector3.ONE * scaler
 
 
 func _on_body_entered(body: Node3D) -> void:

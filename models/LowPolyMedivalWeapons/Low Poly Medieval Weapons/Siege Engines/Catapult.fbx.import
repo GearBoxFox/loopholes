@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c03ff8hr4c0ul"
-valid=false
+path="res://.godot/imported/Catapult.fbx-2d9b7f6da0315b7d8231253d7543e0fd.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Siege Engines/Catapult.fbx"
+dest_files=["res://.godot/imported/Catapult.fbx-2d9b7f6da0315b7d8231253d7543e0fd.scn"]
 
 [params]
 

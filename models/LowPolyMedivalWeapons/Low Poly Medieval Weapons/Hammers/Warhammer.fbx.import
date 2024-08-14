@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ekqwbofu5qvg"
-valid=false
+path="res://.godot/imported/Warhammer.fbx-6999decd4a81c7a20d691bffc4f7f5c8.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Hammers/Warhammer.fbx"
+dest_files=["res://.godot/imported/Warhammer.fbx-6999decd4a81c7a20d691bffc4f7f5c8.scn"]
 
 [params]
 

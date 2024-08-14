@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://vrdf5rroli4l"
-valid=false
+path="res://.godot/imported/Two-Handed Hammer.fbx-cd41c7b8165967747349b727292c782a.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Hammers/Two-Handed Hammer.fbx"
+dest_files=["res://.godot/imported/Two-Handed Hammer.fbx-cd41c7b8165967747349b727292c782a.scn"]
 
 [params]
 

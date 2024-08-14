@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cb31enxft7dnk"
-valid=false
+path="res://.godot/imported/Mace.fbx-0b8e5a7e7490d1fc706ee113a6e140ab.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Maces/Mace.fbx"
+dest_files=["res://.godot/imported/Mace.fbx-0b8e5a7e7490d1fc706ee113a6e140ab.scn"]
 
 [params]
 

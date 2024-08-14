@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bx60nj0sqkvlk"
-valid=false
+path="res://.godot/imported/Battering Ram.fbx-c09066d94ebfdbe5e91b3e5d9d9a9462.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Siege Engines/Battering Ram.fbx"
+dest_files=["res://.godot/imported/Battering Ram.fbx-c09066d94ebfdbe5e91b3e5d9d9a9462.scn"]
 
 [params]
 

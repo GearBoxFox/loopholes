@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://tl3mv23dfa33"
-valid=false
+path="res://.godot/imported/Bardiche.fbx-f87f5272997db704bd4868d1cc1e1b2b.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Axes/Bardiche.fbx"
+dest_files=["res://.godot/imported/Bardiche.fbx-f87f5272997db704bd4868d1cc1e1b2b.scn"]
 
 [params]
 

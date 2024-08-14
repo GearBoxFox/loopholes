@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bipng4ugyc1ai"
-valid=false
+path="res://.godot/imported/Trebuchet.fbx-a391aa49f5e1a5a590de9b2f76962643.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Siege Engines/Trebuchet.fbx"
+dest_files=["res://.godot/imported/Trebuchet.fbx-a391aa49f5e1a5a590de9b2f76962643.scn"]
 
 [params]
 
