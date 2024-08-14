@@ -214,6 +214,6 @@ visible = false
 mesh = SubResource("PlaneMesh_45oi1")
 
 [node name="Soldier" parent="." instance=ExtResource("10_8pmyu")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 48.2797, -227.013)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.200373, -227.013)
 
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]
