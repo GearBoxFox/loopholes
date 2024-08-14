@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ingae1j600le"
-valid=false
+path="res://.godot/imported/Mandolin.fbx-9698c38c673c8d4a98d239bcf7b1ffb7.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Miscellaneous/Mandolin.fbx"
+dest_files=["res://.godot/imported/Mandolin.fbx-9698c38c673c8d4a98d239bcf7b1ffb7.scn"]
 
 [params]
 

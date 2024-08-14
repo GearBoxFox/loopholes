@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dmcvye2k1t3gk"
-valid=false
+path="res://.godot/imported/Tankard.fbx-b025f44f2196e84061ec8d76c48ee40f.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Miscellaneous/Tankard.fbx"
+dest_files=["res://.godot/imported/Tankard.fbx-b025f44f2196e84061ec8d76c48ee40f.scn"]
 
 [params]
 

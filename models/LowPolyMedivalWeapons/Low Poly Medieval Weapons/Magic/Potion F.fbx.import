@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bgoqcbobs1tqh"
-valid=false
+path="res://.godot/imported/Potion F.fbx-6316880cdd7c679cec7650e26b5d7730.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Magic/Potion F.fbx"
+dest_files=["res://.godot/imported/Potion F.fbx-6316880cdd7c679cec7650e26b5d7730.scn"]
 
 [params]
 

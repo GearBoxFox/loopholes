@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d0881jsmtbhjb"
-valid=false
+path="res://.godot/imported/Broom.fbx-2fcbbdcc73496ae6e530a25e74ebe0df.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Miscellaneous/Broom.fbx"
+dest_files=["res://.godot/imported/Broom.fbx-2fcbbdcc73496ae6e530a25e74ebe0df.scn"]
 
 [params]
 

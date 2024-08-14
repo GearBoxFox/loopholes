@@ -4,11 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://yqlw4ktur2c8"
-valid=false
+path="res://.godot/imported/Shield C.fbx-d1c473e38e5394c47c3baac7533ac729.scn"
 
 [deps]
 
 source_file="res://models/LowPolyMedivalWeapons/Low Poly Medieval Weapons/Shields/Shield C.fbx"
+dest_files=["res://.godot/imported/Shield C.fbx-d1c473e38e5394c47c3baac7533ac729.scn"]
 
 [params]
 
