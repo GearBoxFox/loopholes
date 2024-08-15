@@ -1,22 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4kwwlc1gw5eg"]
+[gd_scene load_steps=4 format=3 uid="uid://c57yfjlesndie"]
 
-[ext_resource type="PackedScene" uid="uid://cw4b2re5p5ki3" path="res://scenes/enemies/soldierModel.tscn" id="2_107a3"]
+[ext_resource type="PackedScene" uid="uid://bc536y4l7nbay" path="res://models/EnemyModel/soldier.blend" id="1_mjvup"]
 [ext_resource type="Script" path="res://scenes/enemies/soldier.gd" id="2_br3ou"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_grl2j"]
-radius = 0.349691
-height = 1.93035
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_axodb"]
+height = 1.89918
 
-[node name="Soldier" type="CharacterBody3D" groups=["enemy"]]
+[node name="Soldier" instance=ExtResource("1_mjvup")]
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("2_br3ou")
 
-[node name="soldier" parent="." groups=["enemy"] instance=ExtResource("2_107a3")]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.953085, 0)
+shape = SubResource("CapsuleShape3D_axodb")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971698, 0)
-shape = SubResource("CapsuleShape3D_grl2j")
-
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." index="3"]

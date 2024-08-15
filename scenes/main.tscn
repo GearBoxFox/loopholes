@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=19 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://b1idyu1chcfor" path="res://models/Textures/PNG/Dark/texture_01.png" id="6_vo7d2"]
 [ext_resource type="Texture2D" uid="uid://dlsdhtdy04r1o" path="res://models/Textures/PNG/Purple/texture_01.png" id="7_t7lg1"]
 [ext_resource type="Texture2D" uid="uid://bndchvrbo384d" path="res://models/Textures/PNG/Purple/texture_04.png" id="8_ygrg7"]
-[ext_resource type="PackedScene" uid="uid://b4kwwlc1gw5eg" path="res://scenes/enemies/soldier.tscn" id="10_8pmyu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
 font = ExtResource("3_w27de")
@@ -212,8 +211,5 @@ navigation_mesh = SubResource("NavigationMesh_aix0j")
 transform = Transform3D(22.1151, 0, 0, 0, 10, 0, 0, 0, 174.972, 0, 0, 0)
 visible = false
 mesh = SubResource("PlaneMesh_45oi1")
-
-[node name="Soldier" parent="." instance=ExtResource("10_8pmyu")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0.200373, -227.013)
 
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]

@@ -1,44 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw4b2re5p5ki3"]
+[gd_scene load_steps=3 format=3 uid="uid://cw4b2re5p5ki3"]
 
 [ext_resource type="PackedScene" uid="uid://h7imqy88eg21" path="res://models/EnemyModel/soldier.glb" id="1_x3w78"]
 [ext_resource type="Script" path="res://scenes/enemies/soldier_model.gd" id="2_o1fix"]
-
-[sub_resource type="Animation" id="Animation_fif5i"]
-resource_name = "death_fade"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Armature/Skeleton3D/Cube:transparency")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_ntsfg"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Armature/Skeleton3D/Cube:transparency")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_f2aeb"]
-_data = {
-"RESET": SubResource("Animation_ntsfg"),
-"death_fade": SubResource("Animation_fif5i")
-}
 
 [node name="soldier" instance=ExtResource("1_x3w78")]
 script = ExtResource("2_o1fix")
@@ -93,8 +56,3 @@ bones/15/rest = Transform3D(-0.993521, -7.45058e-09, 0.113644, 0.113644, 5.96046
 bones/15/position = Vector3(-0.151658, 0.51682, 0.471244)
 bones/15/rotation = Quaternion(0.0402446, 0.705961, 0.705961, 0.0402446)
 bones/15/scale = Vector3(1, 1, 1)
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." index="2"]
-libraries = {
-"": SubResource("AnimationLibrary_f2aeb")
-}
