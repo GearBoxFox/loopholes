@@ -4,12 +4,11 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://h7imqy88eg21"
-path="res://.godot/imported/soldier.glb-6cba5a9ac0844e0d86e4ad21e788c9d9.scn"
+valid=false
 
 [deps]
 
 source_file="res://models/EnemyModel/soldier.glb"
-dest_files=["res://.godot/imported/soldier.glb-6cba5a9ac0844e0d86e4ad21e788c9d9.scn"]
 
 [params]
 

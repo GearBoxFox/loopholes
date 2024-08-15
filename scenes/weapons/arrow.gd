@@ -42,5 +42,5 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node3D) -> void:
 	if !body.is_in_group("enemy") and !body.is_in_group("player"):
 		has_collided = true
-	elif !has_collided:
-		body.queue_free()
+	elif !has_collided && body.has_method("die"):
+		body.die()

@@ -7,12 +7,12 @@
 radius = 0.349691
 height = 1.93035
 
-[node name="Soldier" type="CharacterBody3D"]
+[node name="Soldier" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 4
 collision_mask = 10
 script = ExtResource("2_br3ou")
 
-[node name="soldier" parent="." instance=ExtResource("2_107a3")]
+[node name="soldier" parent="." groups=["enemy"] instance=ExtResource("2_107a3")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971698, 0)

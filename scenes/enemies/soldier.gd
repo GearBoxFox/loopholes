@@ -2,9 +2,9 @@ extends CharacterBody3D
 
 var movement_speed: float = 2.0
 var movement_target_position: Vector3 = Vector3(0.0,6.0,0.0)
+var dead: bool = false
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var skeleton: PhysicalBoneSimulator3D = $soldier/Armature/Skeleton3D/PhysicalBoneSimulator3D
 @onready var animation_player = $soldier/AnimationPlayer
 
 func _ready():
@@ -30,7 +30,7 @@ func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
 
 func _physics_process(_delta):
-	if navigation_agent.is_navigation_finished():
+	if navigation_agent.is_navigation_finished() || dead:
 		return
 
 	var current_agent_position: Vector3 = global_position
@@ -38,3 +38,7 @@ func _physics_process(_delta):
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
+
+func die() -> void:
+	dead = true
+	animation_player.play("idle")
