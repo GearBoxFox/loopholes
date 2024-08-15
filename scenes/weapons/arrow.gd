@@ -43,4 +43,4 @@ func _on_body_entered(body: Node3D) -> void:
 	if !body.is_in_group("enemy") and !body.is_in_group("player"):
 		has_collided = true
 	elif !has_collided && body.has_method("die"):
-		body.die()
+		body.die(self)

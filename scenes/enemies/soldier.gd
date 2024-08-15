@@ -5,7 +5,7 @@ var movement_target_position: Vector3 = Vector3(0.0,6.0,0.0)
 var dead: bool = false
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var animation_player = $soldier/AnimationPlayer
+@onready var animation_player = $AnimationPlayer
 
 func _ready():
 	animation_player.speed_scale = 0.25
@@ -39,6 +39,15 @@ func _physics_process(_delta):
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
 	move_and_slide()
 
-func die() -> void:
+func die(other: Node3D) -> void:
+	# Trigger death
 	dead = true
-	animation_player.play("idle")
+	animation_player.speed_scale = 1.0
+	animation_player.play("death")
+	
+	# Point in direction of arrow
+	global_rotation.y = other.global_rotation.y + PI
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if (anim_name == "death"):
+		$AnimationPlayer2.play("death_fade")
