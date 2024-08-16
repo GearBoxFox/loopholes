@@ -34,6 +34,8 @@ func _physics_process(delta: float) -> void:
 			velocity = Vector3.ZERO
 			$CollisionShape3D.disabled = true
 			
+			global_position += collision_info.get_remainder() * 0.5
+			
 			# delete the arrow on hitting an enemy
 			if collider.is_in_group("enemy"):
 				collider.die(self)
