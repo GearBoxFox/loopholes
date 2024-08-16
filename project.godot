@@ -39,6 +39,7 @@ movie_writer/movie_file="D:/Godot/test.avi"
 [global_group]
 
 enemy=""
+world=""
 
 [input]
 

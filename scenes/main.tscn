@@ -88,7 +88,7 @@ vertical_alignment = 2
 
 [node name="Level" type="Node" parent="."]
 
-[node name="LevelPrototype" type="Node" parent="."]
+[node name="LevelPrototype" type="Node" parent="." groups=["world"]]
 
 [node name="Ground" type="CSGBox3D" parent="LevelPrototype"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)

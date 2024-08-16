@@ -1,12 +1,11 @@
-extends Area3D
+extends CharacterBody3D
 
 @export var speed = 200
+@export var user_gravity = 10
 
 var y_velocity = 0
 
 var has_collided: bool = false
-var velocity: Vector3 = Vector3.ZERO
-var user_gravity = 10
 
 var prev_pose: Vector2 = Vector2.ZERO
 
@@ -21,26 +20,25 @@ func init(draw_percentage: float) -> void:
 	prev_pose = Vector2(global_position.x, global_position.y)
 
 func _physics_process(delta: float) -> void:
-	# only move if not collided with a wall
-	if !has_collided:
-		# calculate new position
-		position.x += velocity.x * delta
-		position.z += velocity.z * delta
-		position.y += velocity.y * delta
-	
+	if not has_collided:
 		velocity.y -= user_gravity * delta * 4
+		var collision_info = move_and_collide(velocity * delta)
 		
 		# Calculate angle based on pose delta
 		rotation.x = -asin(velocity.y / speed)
 		
-	# scale according to distance from player
-	#var distance = (global_position - player.global_position).length()
-	#var scaler = 2 * pow(log(distance), 3)
-	#arrow_mesh.scale = Vector3.ONE * scaler
-
-
-func _on_body_entered(body: Node3D) -> void:
-	if !body.is_in_group("enemy") and !body.is_in_group("player"):
-		has_collided = true
-	elif !has_collided && body.has_method("die"):
-		body.die(self)
+		if collision_info:
+			# stop all physics updates and disable hitbox
+			var collider = collision_info.get_collider()
+			has_collided = true
+			velocity = Vector3.ZERO
+			$CollisionShape3D.disabled = true
+			
+			# delete the arrow on hitting an enemy
+			if collider.is_in_group("enemy"):
+				collider.die(self)
+				queue_free()
+			
+	else:
+		velocity = Vector3.ZERO 
+		move_and_collide(velocity * delta)
