@@ -29,7 +29,6 @@ signal spawn_projectile
 
 @onready var camera = $Head/Camera
 @onready var raycast = $Head/Camera/RayCast
-@onready var sound_footsteps = $SoundFootsteps
 @onready var blaster_cooldown = $Cooldown
 @onready var arrow_spawn = $Head/Camera/ArrowSpawn
 @onready var bow_animation_player = $Head/Camera/Bow/AnimationPlayer
@@ -71,20 +70,11 @@ func _physics_process(delta):
 	rotation.y = lerp_angle(rotation.y, rotation_target.y, delta * 25)
 	
 	# Movement sound
-	
-	sound_footsteps.stream_paused = true
-	
-	if is_on_floor():
-		if abs(velocity.x) > 1 or abs(velocity.z) > 1:
-			sound_footsteps.stream_paused = false
+
 	
 	# Landing after jump or falling
 	
 	camera.position.y = lerp(camera.position.y, 0.0, delta * 5)
-	
-	if is_on_floor() and gravity > 1 and !previously_floored: # Landed
-		Audio.play("sounds/land.ogg")
-		camera.position.y = -0.1
 	
 	previously_floored = is_on_floor()
 	

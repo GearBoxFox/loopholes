@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dl2ed4gkybggf"]
+[gd_scene load_steps=5 format=3 uid="uid://dl2ed4gkybggf"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_ffboj"]
 [ext_resource type="Texture2D" uid="uid://8ggihh27mlrr" path="res://models/sprites/blob_shadow.png" id="2_b0fo8"]
 [ext_resource type="PackedScene" uid="uid://bkxt6h44nj8pg" path="res://scenes/weapons/bow.tscn" id="2_whs7g"]
-[ext_resource type="AudioStream" uid="uid://cydjn1ct3hps2" path="res://sounds/walking.ogg" id="5_ics1s"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gdq8c"]
 radius = 0.3
@@ -55,16 +54,10 @@ grow_vertical = 2
 
 [node name="Shadow" type="Decal" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.9, 0)
-visible = false
 size = Vector3(1, 2, 1)
 texture_albedo = ExtResource("2_b0fo8")
 modulate = Color(1, 1, 1, 0.705882)
 normal_fade = 0.5
-
-[node name="SoundFootsteps" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ics1s")
-volume_db = -5.0
-autoplay = true
 
 [node name="Cooldown" type="Timer" parent="."]
 one_shot = true
