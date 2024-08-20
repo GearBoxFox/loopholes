@@ -54,11 +54,6 @@ environment = ExtResource("1_q8fpv")
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 19.6371, -8.41533)
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 51.1428, 0)
-shadow_enabled = true
-shadow_opacity = 0.75
-
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_s8mkj")
 
@@ -266,5 +261,14 @@ transform = Transform3D(5.21661, 0, -2.96429, 0, 6, 0, 2.96429, 0, 5.21661, 27.3
 
 [node name="Soldier" parent="." instance=ExtResource("10_8pmyu")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -212.704)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5692, 24.9624, 0)
+light_color = Color(0.810369, 0.411412, 0.142519, 1)
+light_energy = 9.11
+light_indirect_energy = 8.781
+light_size = 0.466
+light_specular = 2.61
+light_bake_mode = 1
 
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]
