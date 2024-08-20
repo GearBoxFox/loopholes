@@ -8,6 +8,8 @@ var dead: bool = false
 @onready var animation_player = $AnimationPlayer
 @onready var player_model = $Armature
 
+signal navigation_finished
+
 func _ready():
 	animation_player.speed_scale = 0.35
 	animation_player.play("run")
@@ -50,3 +52,7 @@ func die(other: Node3D) -> void:
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if (anim_name == "death"):
 		$AnimationPlayer2.play("death_fade")
+
+func _on_navigation_agent_3d_navigation_finished() -> void:
+	queue_free()
+	navigation_finished.emit()

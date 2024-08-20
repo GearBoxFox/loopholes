@@ -8,15 +8,18 @@ var enemy = preload("res://scenes/enemies/soldier.tscn")
 var spawned_enemies = 0
 var spawn_index = 0
 var prev_spawn_index = 0
+var health = 100
 
 @onready var enemy_container = $EnemyContainer
 @onready var enemy_spawns = $EnemySpawn.get_children()
 @onready var enemy_target = $Targets/Marker3D
 
+signal health_updated
+
 func _ready() -> void:
 	randomize()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if enemy_container.get_child_count() == 0 and spawned_enemies == num_enemies:
 		pass
 
@@ -51,7 +54,12 @@ func _on_enemy_spawn_timer_timeout() -> void:
 	enemy_container.add_child(new_enemy)
 	new_enemy.global_position = spawn_pose.global_position
 	
+	new_enemy.navigation_finished.connect(Callable(_take_damage))
+	
 	# increment the number of spawned enemies
 	spawned_enemies += 1
 	new_enemy.set_movement_target(enemy_target.global_position)
 	
+func _take_damage() -> void:
+	health -= 25
+	health_updated.emit(health)

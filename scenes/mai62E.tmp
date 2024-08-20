@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=19 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -39,6 +39,10 @@ noise = SubResource("FastNoiseLite_2m7jc")
 render_priority = 1
 albedo_color = Color(0.06779, 0.39868, 0.118697, 1)
 albedo_texture = SubResource("NoiseTexture2D_j3kgd")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mh6fk"]
+height = 17.2154
+radius = 1.96741
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_3cwbx")
@@ -191,6 +195,15 @@ autostart = true
 
 [node name="EnemyContainer" type="Node" parent="."]
 
+[node name="EnemyTarget" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="EnemyTarget"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.1642, 0)
+shape = SubResource("CylinderShape3D_mh6fk")
+
 [connection signal="health_updated" from="." to="HUD" method="_on_health_updated"]
 [connection signal="spawn_projectile" from="Player" to="." method="_on_player_spawn_projectile"]
 [connection signal="timeout" from="EnemySpawnTimer" to="." method="_on_enemy_spawn_timer_timeout"]
+[connection signal="body_entered" from="EnemyTarget" to="." method="_on_enemy_target_body_entered"]
