@@ -47,7 +47,7 @@ func die(other: Node3D) -> void:
 	animation_player.play("death")
 	
 	# Point in direction of arrow
-	global_rotation.y = other.global_rotation.y + PI
+	global_rotation.y = -other.global_rotation.y
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if (anim_name == "death"):
