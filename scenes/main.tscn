@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=23 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://2s15bu6sxqv1" path="res://scenes/props/barrel.tscn" id="10_0soxp"]
 [ext_resource type="PackedScene" uid="uid://c57yfjlesndie" path="res://scenes/enemies/soldier.tscn" id="10_8pmyu"]
 [ext_resource type="PackedScene" uid="uid://bf0woxx6mkknb" path="res://scenes/props/haystack_1.tscn" id="11_en8bb"]
+[ext_resource type="PackedScene" uid="uid://cavy4bxc07r4u" path="res://scenes/props/bench.tscn" id="12_5j247"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
 font = ExtResource("3_w27de")
@@ -38,8 +39,8 @@ albedo_texture = ExtResource("7_t7lg1")
 albedo_texture = ExtResource("8_ygrg7")
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_aix0j"]
-vertices = PackedVector3Array(1.6349, 0.5, -117.722, 1.8849, 0.5, -115.972, 21.6349, 0.5, -115.972, 21.6349, 0.5, -174.472, -21.6151, 0.5, -174.472, -21.6151, 0.5, -117.722, -1.8651, 0.5, -117.722, -2.3651, 0.5, -110.722, -1.6151, 0.5, -114.222, -2.3651, 0.5, -114.722, -3.6151, 0.5, -110.722, -2.3651, 0.5, -117.222, -21.6151, 0.5, -109.222, -3.6151, 0.5, -109.222, 1.6349, 0.5, -114.222, -2.1151, 0.5, -108.222, -3.6151, 0.5, -107.972, -2.6151, 0.5, -107.722, -21.6151, 0.5, 174.528, 21.6349, 0.5, 174.528)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 4, 0), PackedInt32Array(0, 4, 3), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(5, 6, 11), PackedInt32Array(9, 10, 11), PackedInt32Array(11, 10, 5), PackedInt32Array(5, 10, 12), PackedInt32Array(10, 13, 12), PackedInt32Array(7, 8, 14), PackedInt32Array(7, 14, 15), PackedInt32Array(15, 14, 2), PackedInt32Array(12, 13, 16), PackedInt32Array(16, 17, 12), PackedInt32Array(12, 17, 18), PackedInt32Array(14, 1, 2), PackedInt32Array(15, 2, 17), PackedInt32Array(17, 2, 19), PackedInt32Array(17, 19, 18)]
+vertices = PackedVector3Array(1.6349, 0.5, -117.722, 1.8849, 0.5, -115.972, 21.6349, 0.5, -116.222, 21.6349, 0.5, -174.472, -21.6151, 0.5, -174.472, -21.6151, 0.5, -117.722, -1.8651, 0.5, -117.722, -3.6151, 0.5, -110.722, -3.1151, 0.5, -110.972, -2.3651, 0.5, -114.972, -2.3651, 0.5, -117.222, -21.6151, 0.5, -109.222, -3.6151, 0.5, -109.222, 1.8849, 0.5, -108.222, 1.6349, 0.5, -110.972, 1.1349, 0.5, -111.222, -2.1151, 0.5, -110.472, -2.1151, 0.5, -108.222, -1.8651, 0.5, -114.222, 1.3849, 0.5, -113.972, 1.6349, 0.5, -114.222, 2.3849, 0.5, -113.722, 3.1349, 0.5, -109.722, 21.6349, 0.5, -109.722, -3.3651, 0.5, -107.722, -21.6151, 0.5, 174.528, 3.1349, 0.5, -108.722, 21.6349, 0.5, 174.528)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(6, 4, 0), PackedInt32Array(0, 4, 3), PackedInt32Array(8, 7, 9), PackedInt32Array(9, 7, 10), PackedInt32Array(10, 7, 5), PackedInt32Array(5, 7, 11), PackedInt32Array(5, 6, 10), PackedInt32Array(7, 12, 11), PackedInt32Array(14, 13, 15), PackedInt32Array(15, 13, 16), PackedInt32Array(16, 13, 17), PackedInt32Array(8, 9, 18), PackedInt32Array(8, 18, 16), PackedInt32Array(16, 18, 15), PackedInt32Array(15, 18, 19), PackedInt32Array(21, 19, 20), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 2), PackedInt32Array(20, 1, 21), PackedInt32Array(21, 1, 2), PackedInt32Array(19, 18, 20), PackedInt32Array(24, 17, 13), PackedInt32Array(12, 24, 11), PackedInt32Array(11, 24, 25), PackedInt32Array(26, 22, 23), PackedInt32Array(13, 26, 23), PackedInt32Array(13, 23, 24), PackedInt32Array(24, 23, 27), PackedInt32Array(24, 27, 25)]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_45oi1"]
 
@@ -248,6 +249,9 @@ transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -19.9114, 0, -205.029)
 
 [node name="Haystack1" parent="NavigationRegion3D/Decoration" instance=ExtResource("11_en8bb")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -38.5674, 0, -193.316)
+
+[node name="Bench" parent="NavigationRegion3D/Decoration" instance=ExtResource("12_5j247")]
+transform = Transform3D(5.21661, 0, -2.96429, 0, 6, 0, 2.96429, 0, 5.21661, 27.3684, 0, -196.298)
 
 [node name="Soldier" parent="." instance=ExtResource("10_8pmyu")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, -212.704)
