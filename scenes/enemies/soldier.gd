@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var movement_speed: float = 3.0
+var movement_speed: float = 10.0
 var movement_target_position: Vector3 = Vector3(0.0,6.0,0.0)
 var dead: bool = false
 

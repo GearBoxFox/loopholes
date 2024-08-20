@@ -6,6 +6,8 @@ var enemy = preload("res://scenes/enemies/soldier.tscn")
 @export var num_enemies = 5
 
 var spawned_enemies = 0
+var spawn_index = 0
+var prev_spawn_index = 0
 
 @onready var enemy_container = $EnemyContainer
 @onready var enemy_spawns = $EnemySpawn.get_children()
@@ -37,7 +39,13 @@ func _on_enemy_spawn_timer_timeout() -> void:
 		return
 	
 	# spawn new enemy at random spawn position
-	var spawn_index = randi_range(0, enemy_spawns.size())
+	for i in 5:
+		spawn_index = randi() % enemy_spawns.size()
+		if prev_spawn_index != spawn_index:
+			break
+			
+	prev_spawn_index = spawn_index
+	
 	var spawn_pose = enemy_spawns[spawn_index]
 	var new_enemy = enemy.instantiate()
 	enemy_container.add_child(new_enemy)

@@ -1833,6 +1833,12 @@ _subresources={
 "slices/amount": 0
 }
 },
+"materials": {
+"Material.001": {
+"use_external/enabled": true,
+"use_external/path": "res://models/EnemyModel/soldier_material.tres"
+}
+},
 "nodes": {
 "PATH:Empty": {
 "import/skip_import": true
