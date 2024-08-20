@@ -1,11 +1,10 @@
-[gd_scene load_steps=25 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=27 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://scenes/player/player.tscn" id="3_f8rc6"]
 [ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
 [ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
-[ext_resource type="Texture2D" uid="uid://dqtrw7iw7s8is" path="res://models/Textures/PNG/Green/texture_01.png" id="5_u86ru"]
 [ext_resource type="PackedScene" uid="uid://dsnyyqr35hbot" path="res://scenes/world/archer_tower.tscn" id="6_kbp7a"]
 [ext_resource type="Texture2D" uid="uid://b1idyu1chcfor" path="res://models/Textures/PNG/Dark/texture_01.png" id="6_vo7d2"]
 [ext_resource type="PackedScene" uid="uid://d3rom6840eldk" path="res://models/Buildings/wall.blend" id="7_2m5yd"]
@@ -22,8 +21,22 @@ font_size = 36
 outline_size = 12
 outline_color = Color(0, 0, 0, 0.470588)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knxg5"]
-albedo_texture = ExtResource("5_u86ru")
+[sub_resource type="Gradient" id="Gradient_pg4rl"]
+colors = PackedColorArray(0, 0.172549, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2m7jc"]
+frequency = 1.0
+fractal_type = 0
+domain_warp_enabled = true
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j3kgd"]
+color_ramp = SubResource("Gradient_pg4rl")
+noise = SubResource("FastNoiseLite_2m7jc")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sluob"]
+render_priority = 1
+albedo_color = Color(0.06779, 0.39868, 0.118697, 1)
+albedo_texture = SubResource("NoiseTexture2D_j3kgd")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ojhjx"]
 albedo_texture = ExtResource("6_vo7d2")
@@ -53,7 +66,7 @@ script = ExtResource("1_3cwbx")
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -2.51561, 19.6371, -95.2566)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -2.51561, 19.6371, -15.2566)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_s8mkj")
@@ -107,7 +120,7 @@ transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 
 
 [node name="Ground" type="CSGBox3D" parent="LevelPrototype"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.5)
-material_override = SubResource("StandardMaterial3D_knxg5")
+material_override = SubResource("StandardMaterial3D_sluob")
 use_collision = true
 collision_layer = 2
 size = Vector3(500, 1, 500)
@@ -237,6 +250,7 @@ size = Vector3(3.742, 8, 1)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(13.2153, 0, 0, 0, 1, 0, 0, 0, 1.76849, 0, 0, 0)
+visible = false
 navigation_mesh = SubResource("NavigationMesh_aix0j")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D"]
