@@ -2,6 +2,7 @@ extends Node3D
 
 var arrow_base = preload("res://scenes/weapons/arrow.tscn")
 var enemy = preload("res://scenes/enemies/soldier.tscn")
+var player_scene = preload("res://scenes/player/player.tscn")
 
 @export var num_enemies = 5
 
@@ -9,19 +10,55 @@ var spawned_enemies = 0
 var spawn_index = 0
 var prev_spawn_index = 0
 var health = 100
+var started = false
+var score = 1
 
 @onready var enemy_container = $EnemyContainer
 @onready var enemy_spawns = $EnemySpawn.get_children()
 @onready var enemy_target = $Targets/Marker3D
+@onready var round_timer = $RoundEndTimer
+@onready var start_camera = $StartCamera
+@onready var player_spawn = $PlayerSpawn
+@onready var HUD = $HUD
+@onready var start_menu = $StartMenu
 
 signal health_updated
+signal end_game
 
 func _ready() -> void:
 	randomize()
+	HUD.visible = false
+	start_menu.visible = true
+	
+func _start_game() -> void:
+	# hide start menu
+	HUD.visible = true
+	start_menu.visible = false
+	
+	#create player and load it
+	start_camera.current = false
+	var player = player_scene.instantiate()
+	add_child(player)
+	player.global_position = player_spawn.global_position
+	player.get_node("Head/Camera").current = true
+	
+	started = true
+	
+func _end_game() -> void:
+	end_game.emit()
+	get_tree().call_group("player", "queue_free")
+	get_tree().call_group("enemy", "queue_free")
+	start_camera.current = true
+	HUD.hide()
+	start_menu.show()
 
 func _process(_delta: float) -> void:
-	if enemy_container.get_child_count() == 0 and spawned_enemies == num_enemies:
-		pass
+	if enemy_container.get_child_count() == 0 and spawned_enemies == num_enemies \
+	and round_timer.is_stopped() and started:
+		round_timer.start()
+		
+	if health <= 0.0:
+		_end_game()
 
 func _on_player_spawn_projectile(location: Marker3D, draw_percentage: float) -> void:
 	var arrow = arrow_base.instantiate()
@@ -35,10 +72,9 @@ func _on_player_spawn_projectile(location: Marker3D, draw_percentage: float) -> 
 	arrow.init(draw_percentage)
 	
 
-
 func _on_enemy_spawn_timer_timeout() -> void:
 	# if we've spawned all enemies this round, don't spawn more
-	if num_enemies == spawned_enemies:
+	if num_enemies == spawned_enemies or not started:
 		return
 	
 	# spawn new enemy at random spawn position
@@ -63,3 +99,9 @@ func _on_enemy_spawn_timer_timeout() -> void:
 func _take_damage() -> void:
 	health -= 25
 	health_updated.emit(health)
+
+
+func _on_round_end_timer_timeout() -> void:
+	# reset for next round
+	num_enemies += 1
+	spawned_enemies = 0
