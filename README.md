@@ -3,6 +3,7 @@
 [Kenney Prototype Textures](https://kenney.nl/assets/prototype-textures) \
 [Low Poly Medivial Weapons by LowPolyAssets](https://lowpolyassets.itch.io/low-poly-medieval-weapons) \
 [Godot 4/ Blender - Third Person Character From Scratch](https://www.youtube.com/watch?v=VasHZZyPpYU&t=1613s)
+[Kenney Godot Splash Screens](https://github.com/KenneyNL/Godot-SplashScreens)
 
 
 ### Controls

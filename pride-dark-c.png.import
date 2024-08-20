@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biff4dkpfqi47"
-path="res://.godot/imported/splash-screen.png-ae6c8b07e185ee8a074576008d9ccc5a.ctex"
+uid="uid://dmo7honsy2fgf"
+path="res://.godot/imported/pride-dark-c.png-d8ddfb3ef462253f886d9200f9c37019.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://splash-screen.png"
-dest_files=["res://.godot/imported/splash-screen.png-ae6c8b07e185ee8a074576008d9ccc5a.ctex"]
+source_file="res://pride-dark-c.png"
+dest_files=["res://.godot/imported/pride-dark-c.png-d8ddfb3ef462253f886d9200f9c37019.ctex"]
 
 [params]
 
