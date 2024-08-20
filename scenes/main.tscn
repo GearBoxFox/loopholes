@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=25 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dqtrw7iw7s8is" path="res://models/Textures/PNG/Green/texture_01.png" id="5_u86ru"]
 [ext_resource type="PackedScene" uid="uid://dsnyyqr35hbot" path="res://scenes/world/archer_tower.tscn" id="6_kbp7a"]
 [ext_resource type="Texture2D" uid="uid://b1idyu1chcfor" path="res://models/Textures/PNG/Dark/texture_01.png" id="6_vo7d2"]
+[ext_resource type="PackedScene" uid="uid://d3rom6840eldk" path="res://models/Buildings/wall.blend" id="7_2m5yd"]
 [ext_resource type="Texture2D" uid="uid://dlsdhtdy04r1o" path="res://models/Textures/PNG/Purple/texture_01.png" id="7_t7lg1"]
 [ext_resource type="Texture2D" uid="uid://bndchvrbo384d" path="res://models/Textures/PNG/Purple/texture_04.png" id="8_ygrg7"]
 [ext_resource type="PackedScene" uid="uid://2s15bu6sxqv1" path="res://scenes/props/barrel.tscn" id="10_0soxp"]
@@ -52,7 +53,7 @@ script = ExtResource("1_3cwbx")
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 19.6371, -8.41533)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -4.69434, 19.6371, -8.41533)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_s8mkj")
@@ -90,6 +91,18 @@ vertical_alignment = 2
 [node name="ArcherTower" parent="Level" instance=ExtResource("6_kbp7a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3311, 0)
 
+[node name="wall" parent="Level" instance=ExtResource("7_2m5yd")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -243.967, 0, 247.94)
+
+[node name="wall2" parent="Level" instance=ExtResource("7_2m5yd")]
+transform = Transform3D(-2.62268e-08, 0, -0.6, 0, 0.6, 0, 0.6, 0, -2.62268e-08, -243.967, 0, -243.252)
+
+[node name="wall3" parent="Level" instance=ExtResource("7_2m5yd")]
+transform = Transform3D(-0.6, 0, 5.24537e-08, 0, 0.6, 0, -5.24537e-08, 0, -0.6, 251.549, 0, -243.252)
+
+[node name="wall4" parent="Level" instance=ExtResource("7_2m5yd")]
+transform = Transform3D(-2.62268e-08, 0, 0.6, 0, 0.6, 0, -0.6, 0, -2.62268e-08, 251.549, 0, 250.65)
+
 [node name="LevelPrototype" type="Node" parent="." groups=["world"]]
 
 [node name="Ground" type="CSGBox3D" parent="LevelPrototype"]
@@ -102,6 +115,7 @@ size = Vector3(500, 1, 500)
 [node name="Walls" type="Node" parent="LevelPrototype"]
 
 [node name="Wall" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
+visible = false
 layers = 3
 use_collision = true
 collision_layer = 2
@@ -119,6 +133,7 @@ size = Vector3(20, 20, 20)
 
 [node name="Wall2" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 486)
+visible = false
 layers = 3
 use_collision = true
 collision_layer = 2
@@ -136,6 +151,7 @@ size = Vector3(20, 20, 20)
 
 [node name="Wall3" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 1)
+visible = false
 use_collision = true
 collision_layer = 2
 
@@ -152,6 +168,7 @@ size = Vector3(20, 20, 20)
 
 [node name="Wall4" type="CSGCombiner3D" parent="LevelPrototype/Walls"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 487, 0, 1)
+visible = false
 use_collision = true
 collision_layer = 2
 
