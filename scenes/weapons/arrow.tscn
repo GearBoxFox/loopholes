@@ -8,7 +8,7 @@ radius = 0.0035418
 height = 0.319997
 
 [node name="Arrow" type="CharacterBody3D" groups=["world"]]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 disable_mode = 1
 collision_layer = 8
 collision_mask = 6
