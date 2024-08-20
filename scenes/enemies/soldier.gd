@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-var movement_speed: float = 2.0
+var movement_speed: float = 3.0
 var movement_target_position: Vector3 = Vector3(0.0,6.0,0.0)
 var dead: bool = false
 
@@ -9,7 +9,7 @@ var dead: bool = false
 @onready var player_model = $Armature
 
 func _ready():
-	animation_player.speed_scale = 0.25
+	animation_player.speed_scale = 0.35
 	animation_player.play("run")
 	
 	# These values need to be adjusted for the actor's speed
@@ -23,9 +23,6 @@ func _ready():
 func actor_setup():
 	# Wait for the first physics frame so the NavigationServer can sync.
 	await get_tree().physics_frame
-
-	# Now that the navigation map is no longer empty, set the movement target.
-	set_movement_target(movement_target_position)
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
