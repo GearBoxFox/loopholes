@@ -35,17 +35,22 @@ func _start_game() -> void:
 	HUD.visible = true
 	start_menu.visible = false
 	
+	# reset score and HP
+	score = 0
+	health = 100
+	
 	#create player and load it
 	start_camera.current = false
 	var player = player_scene.instantiate()
 	add_child(player)
 	player.global_position = player_spawn.global_position
 	player.get_node("Head/Camera").current = true
+	player.spawn_projectile.connect(Callable(_on_player_spawn_projectile))
 	
 	started = true
 	
 func _end_game() -> void:
-	end_game.emit()
+	end_game.emit(score)
 	get_tree().call_group("player", "queue_free")
 	get_tree().call_group("enemy", "queue_free")
 	start_camera.current = true
@@ -102,6 +107,9 @@ func _take_damage() -> void:
 
 
 func _on_round_end_timer_timeout() -> void:
+	if not started:
+		return
 	# reset for next round
 	num_enemies += 1
 	spawned_enemies = 0
+	score += 1

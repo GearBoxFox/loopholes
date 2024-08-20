@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 @export_subgroup("Properties")
-@export var movement_speed = 5
+@export var movement_speed = 10
 @export var jump_strength = 8
 
 var mouse_sensitivity = 700
@@ -141,14 +141,6 @@ func handle_controls(_delta):
 	# Jumping
 	
 	if Input.is_action_just_pressed("jump"):
-		
-		if jump_single or jump_double:
-			Audio.play("sounds/jump_a.ogg, sounds/jump_b.ogg, sounds/jump_c.ogg")
-		
-		if jump_double:
-			
-			gravity = -jump_strength
-			jump_double = false
 			
 		if(jump_single): action_jump()
 
@@ -184,6 +176,7 @@ func action_shoot():
 	else:
 		if drawing:
 			bow_animation_player.play("release")
+			Audio.play("sounds/jump_a.ogg, sounds/jump_b.ogg, sounds/jump_c.ogg")
 			blaster_cooldown.start()
 			drawing = false
 			spawn_projectile.emit(arrow_spawn, draw_timer / 1.0)
