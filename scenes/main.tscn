@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene load_steps=24 format=3 uid="uid://dxvvlck8lej3f"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_3cwbx"]
 [ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="3_s8mkj"]
 [ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://fonts/lilita_one_regular.ttf" id="3_w27de"]
 [ext_resource type="Texture2D" uid="uid://dqtrw7iw7s8is" path="res://models/Textures/PNG/Green/texture_01.png" id="5_u86ru"]
+[ext_resource type="PackedScene" uid="uid://dsnyyqr35hbot" path="res://scenes/world/archer_tower.tscn" id="6_kbp7a"]
 [ext_resource type="Texture2D" uid="uid://b1idyu1chcfor" path="res://models/Textures/PNG/Dark/texture_01.png" id="6_vo7d2"]
 [ext_resource type="Texture2D" uid="uid://dlsdhtdy04r1o" path="res://models/Textures/PNG/Purple/texture_01.png" id="7_t7lg1"]
 [ext_resource type="Texture2D" uid="uid://bndchvrbo384d" path="res://models/Textures/PNG/Purple/texture_04.png" id="8_ygrg7"]
@@ -51,10 +52,10 @@ script = ExtResource("1_3cwbx")
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 20.6963, -168.255)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8, 19.6371, -8.41533)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 3, 0)
+transform = Transform3D(-0.422618, -0.694272, 0.582564, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 51.1428, 0)
 shadow_enabled = true
 shadow_opacity = 0.75
 
@@ -90,6 +91,9 @@ vertical_alignment = 2
 [node name="Enemies" type="Node" parent="."]
 
 [node name="Level" type="Node" parent="."]
+
+[node name="ArcherTower" parent="Level" instance=ExtResource("6_kbp7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.3311, 0)
 
 [node name="LevelPrototype" type="Node" parent="." groups=["world"]]
 
@@ -171,37 +175,44 @@ size = Vector3(20, 20, 20)
 
 [node name="UpperTower" type="CSGCombiner3D" parent="LevelPrototype/Tower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+visible = false
 use_collision = true
 collision_layer = 2
 
 [node name="UpperBaseWalls" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+visible = false
 size = Vector3(32, 32, 32)
 material = SubResource("StandardMaterial3D_8muwo")
 
 [node name="UpperHollow" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 16, 0)
+visible = false
 operation = 2
 size = Vector3(30, 30, 30)
 material = SubResource("StandardMaterial3D_dguql")
 
 [node name="Window" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 9, 0)
+visible = false
 operation = 2
 size = Vector3(3, 15, 2)
 
 [node name="Window2" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 9, 0)
+visible = false
 operation = 2
 size = Vector3(3, 15, 2)
 
 [node name="Window3" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 9, 16)
+visible = false
 operation = 2
 size = Vector3(3, 15, 2)
 
 [node name="Window4" type="CSGBox3D" parent="LevelPrototype/Tower/UpperTower"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 9, -16)
+visible = false
 operation = 2
 size = Vector3(3, 15, 2)
 

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsnyyqr35hbot"]
+
+[ext_resource type="PackedScene" uid="uid://b0oooh6j0g8tr" path="res://models/Buildings/archer_tower.blend" id="1_t7ed4"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_o5112"]
+height = 0.406342
+radius = 53.1714
+
+[node name="ArcherTower" type="StaticBody3D"]
+collision_layer = 2
+collision_mask = 9
+
+[node name="archer_tower" parent="." instance=ExtResource("1_t7ed4")]
+
+[node name="floor" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_o5112")
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -49.5634, 15.0226, 0)
+polygon = PackedVector2Array(16.622, 14.952, -16.5086, 14.8676, -16.5398, -15.0419, -1.18955, -15.0854, -1.29814, 8.58326, 1.15829, 8.56399, 1.09565, -15.1379, 16.563, -15.2514)
