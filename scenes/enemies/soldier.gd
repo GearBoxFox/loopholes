@@ -6,6 +6,7 @@ var dead: bool = false
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var animation_player = $AnimationPlayer
+@onready var player_model = $Armature
 
 func _ready():
 	animation_player.speed_scale = 0.25
@@ -37,6 +38,7 @@ func _physics_process(_delta):
 	var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 
 	velocity = current_agent_position.direction_to(next_path_position) * movement_speed
+	player_model.rotation.y = atan2(velocity.x, velocity.z)
 	move_and_slide()
 
 func die(other: Node3D) -> void:

@@ -53,7 +53,7 @@ script = ExtResource("1_3cwbx")
 environment = ExtResource("1_q8fpv")
 
 [node name="Player" parent="." instance=ExtResource("3_f8rc6")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -4.69434, 19.6371, -8.41533)
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -2.51561, 19.6371, -95.2566)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("3_s8mkj")
